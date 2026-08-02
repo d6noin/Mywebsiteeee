@@ -1,0 +1,12 @@
+{
+  "profile": {
+    "nickname": "Гоша Авторитет",
+    "description": "Здесь будет твоё описание. Войди как админ, открой «настройки», измени, потом нажми «опубликовать» и залей data.json на GitHub.",
+    "avatar": "ss.jpg",
+    "recordId": "0001",
+    "status": "ACTIVE",
+    "statusColor": "blue"
+  },
+  "info": [],
+  "reviews": []
+}

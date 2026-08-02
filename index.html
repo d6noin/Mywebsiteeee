@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Гоша Авторитет — досье</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Верхняя полоса -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-brand">DOSSIER<span class="topbar-brand-dim">.DB</span></span>
+      <nav class="topbar-actions" id="topbarActions">
+        <button class="tbtn" id="adminLoginBtn">вход</button>
+        <button class="tbtn admin-only" id="settingsBtn" style="display:none">настройки</button>
+        <button class="tbtn admin-only" id="logoutBtn" style="display:none">выйти</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Шапка досье -->
+    <section class="record-header">
+      <div class="record-header-left">
+        <div class="record-id">REC&nbsp;№<span id="recordId">0001</span></div>
+        <div class="name-row">
+          <h1 class="callsign" id="nickname">Гоша Авторитет</h1>
+          <span class="status-badge" id="statusBadge">ACTIVE</span>
+        </div>
+        <p class="tagline" id="description">Здесь будет твоё описание. Войди как админ и открой «настройки», чтобы изменить.</p>
+        <div class="record-stats">
+          <div class="rstat"><span class="rstat-num" id="infoCount">0</span><span class="rstat-label">записей</span></div>
+          <div class="rstat"><span class="rstat-num" id="reviewsCount">0</span><span class="rstat-label">отзывов</span></div>
+        </div>
+      </div>
+      <div class="record-header-right">
+        <div class="avatar-box">
+          <img src="ss.jpg" alt="avatar" class="avatar" id="avatarImg"
+            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23131315%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23444%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22monospace%22 font-size=%2214%22%3ENO IMG%3C/text%3E%3C/svg%3E'">
+        </div>
+        <span class="avatar-caption">IMG_01</span>
+      </div>
+    </section>
+
+    <!-- Досье / инфо-блоки -->
+    <section class="panel" id="dossierSection">
+      <div class="section-bar">
+        <span class="section-bar-title">// ДОСЬЕ</span>
+        <button class="pill-btn admin-only" id="addInfoBtn" style="display:none">+ запись</button>
+      </div>
+      <div class="dossier-grid" id="infoGrid"></div>
+      <div class="empty-state" id="infoEmpty" style="display:none">Записей пока нет.</div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="panel" id="reviewsSection">
+      <div class="section-bar">
+        <span class="section-bar-title">// ОТЗЫВЫ</span>
+        <button class="pill-btn" id="leaveReviewBtn">+ оставить</button>
+      </div>
+      <div class="reviews-list" id="reviewsList"></div>
+      <div class="empty-state" id="reviewsEmpty" style="display:none">Пока нет отзывов. Будь первым.</div>
+    </section>
+
+    <footer class="page-footer">
+      <span>GitHub Pages · localStorage</span>
+    </footer>
+
+  </main>
+
+  <!-- Модалка -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
